@@ -22,9 +22,7 @@ import glob
 import pandas as pd
 import json
 from decimal import Decimal
-import sys
 from colorama import Fore
-import msvcrt
 
 statements_dir_fp = "statements/"
 storage_dir_fp = "storage/"
@@ -83,7 +81,7 @@ account_names = account_name_map["account_name"].to_list()
 
 for account in accounts:
     if not account["account_num"] in account_nums:
-        account_names.append(input(f"Name account {account["account_num"]}: "))
+        account_names.append(input(f"Name account {account['account_num']}: "))
         account_nums.append(account["account_num"])
 
 account_name_map = pd.DataFrame({"account_num": account_nums,
@@ -122,7 +120,7 @@ except:
 
 buckets_df = pd.DataFrame(buckets)
 
-if input(f"You have defined the following buckets:\n{buckets_df["name"]}\nWould you like to define new buckets?[y/(n)] ") == "y":
+if len(buckets_df) == 0 or input(f"You have defined the following buckets:\n{buckets_df['name']}\nWould you like to define new buckets?[y/(n)] ") == "y":
     print("Enter 'done' to exit:")
     while True:
         bucket_name = input("\tNew bucket name: ")
@@ -173,7 +171,7 @@ for transaction in transactions:
         for rule in bucket["transaction_rules"]:
             if rule in transaction["name"]:
                 if rule_match_count != 0:
-                    print(f"\tTransaction rule conflict for transaction {transaction["name"]}: {transaction["bucket"]} vs {bucket["name"]}")
+                    print(f"\tTransaction rule conflict for transaction {transaction['name']}: {transaction['bucket']} vs {bucket['name']}")
                 transaction["bucket"] = bucket["name"] # TODO: do this at the end instead
                 rule_match_count += 1
     
@@ -293,6 +291,6 @@ for bucket in buckets:
             if rule in transaction["name"]:
                 bucket["balance"] += float(transaction["amount"])
     
-    print(f"{bucket["name"]} {bucket["balance"]}")
+    print(f"{bucket['name']} {bucket['balance']}")
 
 
