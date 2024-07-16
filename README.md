@@ -18,8 +18,8 @@ I wish this project to have a low bar to collaboration. We're just a group of co
 If you wish to collaborate, please clone the project, and branch out of main. I have made the project public, at the cost of a protected main branch only I can modify.
 I've never worked on an open-source project so let this be a collaborate working experience, and an open forum.
 
-When you have made changes you'd like to introduce to the main branch, please send a merge request with explanation for what you are doing, why, and how you achieving your goals.
-If the changes you made match your explanation and are sufficiently documented, I will eagerly approve it following a little testing.
+When you have made changes you'd like to introduce to the dev branch, please send a merge request with explanation for what you are doing, why, and how you achieving your goals.
+If the changes you made match your explanation and are sufficiently documented, I will eagerly approve it following a little testing. I plan to merge complete version into main ever so and again.
 
 I'm looking to levarage the issue board/wiki to make collaboration seamless, please throw me your ideas!
 
